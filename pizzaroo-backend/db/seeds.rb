@@ -38,4 +38,12 @@ end
       )
 end
 
+5.times do
+  order = OrderDish.create(
+      order_id: Faker::Number.between(1, 5),
+      dish_id: Faker::Number.between(1, 5),
+      quantity: Faker::Number.between(1, 5),
+    )
+end
+
 
