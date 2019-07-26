@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         post '/login', to: 'auth#create'
         # get '/profile', to: 'users#profile'
         get '/validate', to: 'auth#validate'
-        get '/users', to: 'users#all'
+        # get '/users', to: 'users#all'
       resources :orders
     end
   end
