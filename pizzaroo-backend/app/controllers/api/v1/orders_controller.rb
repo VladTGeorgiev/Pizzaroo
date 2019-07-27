@@ -1,19 +1,18 @@
 class Api::V1::OrdersController < ApplicationController
 
     def index
-        all = Orders.all
-        render json: { user: OrderSerializer.new(all)}
+        render json: Order.all
     end
 
     def create
         order = Order.create(order_params)
-        render json: { user: OrderSerializer.new(order)
+        render json: { order: OrderSerializer.new(order)}
     end
 
     def show
         order = Order.find_by(id: params[:id])
         if order 
-            render json: OrderSerializer.new(order).to_serialized_json
+            render json: {order: OrderSerializer.new(order)}
         else
             render plain: "This order doesn't exist"
         end

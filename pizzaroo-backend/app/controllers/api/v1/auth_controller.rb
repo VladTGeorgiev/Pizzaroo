@@ -1,5 +1,5 @@
 class Api::V1::AuthController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    # skip_before_action :authorized, only: [:create]
  
     def create
       @user = User.find_by(username: user_login_params[:username])
@@ -12,6 +12,7 @@ class Api::V1::AuthController < ApplicationController
     end
 
     def validate
+      @user = User.find_by(username: user_login_params[:username])
       user = @user
       if user
         token = encode_token({ user_id: @user.id })
@@ -24,6 +25,6 @@ class Api::V1::AuthController < ApplicationController
     private
    
     def user_login_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :name)
     end
 end
