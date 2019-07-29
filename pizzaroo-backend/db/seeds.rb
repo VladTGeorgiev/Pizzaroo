@@ -33,7 +33,8 @@ end
 
 5.times do
     order = Order.create(
-        user_id: Faker::Number.between(1, 10),
+        user_id: 1,
+        # Faker::Number.between(1, 10),
         restaurant_id: Faker::Number.between(1, 5),
       )
 end

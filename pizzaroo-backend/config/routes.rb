@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         get '/validate', to: 'auth#validate'
         # get '/users', to: 'users#all'
       resources :orders
+      resources :restaurants
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
