@@ -28,7 +28,7 @@ class Api::V1::OrdersController < ApplicationController
         order = Order.find_by(id: params[:id])
         id = order.id
         order.destroy
-        render json: {info: 'order destroyed', orderId: id}
+        render json: {info: 'Order Deleted!', orderId: id}
     end
 
     private

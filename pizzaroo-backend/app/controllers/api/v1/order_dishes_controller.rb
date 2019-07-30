@@ -6,7 +6,6 @@ class Api::V1::OrderDishesController < ApplicationController
 
     def create
         order_dish = OrderDish.create(order_dish_params)
-        # byebug
         render json: { order_dish: OrderDishSerializer.new(order_dish)}
     end
 
@@ -22,14 +21,11 @@ class Api::V1::OrderDishesController < ApplicationController
     def update
         order_dish = OrderDish.find(params[:id])
         order_dish.update(order_dish_params)
-        render json: OrderSerializer.new(order_dish).to_serialized_json
     end
 
     def destroy
         order_dish = OrderDish.find_by(id: params[:id])
-        id = order_dish.id
         order_dish.destroy
-        render json: {info: 'order destroyed', order_dishId: id}
     end
 
     private
