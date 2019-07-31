@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Order.destroy_all
+
 require 'faker'
 
 10.times do
@@ -31,20 +34,20 @@ end
       )
 end
 
-5.times do
-    order = Order.create(
-        user_id: 1,
-        # Faker::Number.between(1, 10),
-        restaurant_id: Faker::Number.between(1, 5),
-      )
-end
+# 5.times do
+#     order = Order.create(
+#         user_id: 1,
+#         # Faker::Number.between(1, 10),
+#         restaurant_id: Faker::Number.between(1, 5),
+#       )
+# end
 
-5.times do
-  order = OrderDish.create(
-      order_id: Faker::Number.between(1, 5),
-      dish_id: Faker::Number.between(1, 5),
-      quantity: Faker::Number.between(1, 5),
-    )
-end
+# 5.times do
+#   order = OrderDish.create(
+#       order_id: Faker::Number.between(1, 5),
+#       dish_id: Faker::Number.between(1, 5),
+#       quantity: Faker::Number.between(1, 5),
+#     )
+# end
 
 
